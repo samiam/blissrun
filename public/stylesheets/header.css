@@ -1,0 +1,50 @@
+#header {
+  width: 960;
+  height: 400px;
+  margin: 0 auto;
+  /* 	background: url(/images/img05.jpg) no-repeat left top; */
+  background: url(/images/logo2.png) no-repeat left top;
+  font: "Trebuchet MS", Arial, Helvetica, sans-serif;
+/*   font: 18px sans; */
+}
+
+#header h1 {
+  color: white;
+  padding: 30px 0 0 30px;
+}
+
+#header-subtitle { 
+  color: white;
+  font-style: italic;
+  padding: 0 0 0 30px;
+}
+
+#header #menu ul {
+  margin: 90px 0 0 30px;
+  padding: 0;
+  list-style: none;
+  line-height: normal;
+}
+
+#header #menu li {
+  /* 	display: inline; */
+  /*	display: block;
+     display: list-item; 
+     display: none; */
+  float: left;
+}
+
+#header #menu a {
+  display: block;
+  float: left;
+  margin-right: 30px;
+  margin-left: 0px;
+  padding: 0px 0px 0px 0px;
+  letter-spacing: -.5px;
+  text-decoration: none;
+  text-transform: lowercase;
+  font: 18px "Trebuchet MS", Arial, Helvetica, sans-serif;
+  color: #FFFFFF;
+}
+
+#header #menu a:hover { text-decoration: underline; }

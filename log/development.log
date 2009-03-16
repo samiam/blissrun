@@ -1,8 +1,0 @@
-
-
-Processing Rails::InfoController#properties (for 69.218.233.113 at 2009-03-11 15:14:11) [GET]
-  [4;36;1mSQL (1.3ms)[0m   [0;1m SELECT name
- FROM sqlite_master
- WHERE type = 'table' AND NOT name = 'sqlite_sequence'
-[0m
-Completed in 14ms (View: 1, DB: 1) | 200 OK [http://www.blissrun.org/rails/info/properties]

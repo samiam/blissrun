@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+
+  <head>
+    <meta name="keywords" content="bliss,run,mindfulness,community,columbus">
+    <meta name="description" content="mindfulness, meditation, breathing">
+
+    <title>Bliss Run Mindfulness Community - <%= @page_title %></title>
+
+    <%= render :partial => "layouts/header" %>
+  </head>
+
+  <body>
+    <%= stylesheet_link_tag "default" %>		
+    <%= yield %>
+    <%= render :partial => "layouts/footer" %>
+  </body>
+
+</html>
