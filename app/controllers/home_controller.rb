@@ -12,9 +12,7 @@ class HomeController < ActionController::Base
     # split into two columns: where we meet on right
     # 
   end
-  def contact
-  end
-  def events
+  def meetings
 
 =begin
  @map = StaticGmaps::Map.new :center   => [ 40.714728, -73.998672 ],
@@ -31,5 +29,12 @@ class HomeController < ActionController::Base
     @map.url
 =end
 
+  end
+  def resources
+  end
+  def contact
+  end
+
+  def lab
   end
 end
