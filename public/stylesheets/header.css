@@ -1,26 +1,35 @@
-#header {
-  width: 960;
-  height: 400px;
+.logo { 
+  width:  960px;
+  height: 200px;
   margin: 0 auto;
-  /* 	background: url(/images/img05.jpg) no-repeat left top; */
   background: url(/images/logo2.png) no-repeat left top;
-  font: "Trebuchet MS", Arial, Helvetica, sans-serif;
+font-family: Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif;
+}
+
+#header {
+/*   width: 960px; */
+/*   height: 200px; */
+/*   margin: 0 auto; */
+  /* 	background: url(/images/img05.jpg) no-repeat left top; */
+/*   font: "Trebuchet MS", Arial, Helvetica, sans-serif; */
 /*   font: 18px sans; */
 }
 
 #header h1 {
   color: white;
-  padding: 30px 0 0 30px;
+/*   padding: 30px 0 0 30px; */
+  padding: 3% 0 0 3%;
 }
 
 #header-subtitle { 
   color: white;
+/*   font: "Trebuchet MS", Arial, Helvetica, sans-serif; */
   font-style: italic;
-  padding: 0 0 0 30px;
+  padding: 0 0 0 3%;
 }
 
 #header #menu ul {
-  margin: 90px 0 0 30px;
+  margin: 90px 0 0 3%;
   padding: 0;
   list-style: none;
   line-height: normal;
@@ -44,6 +53,7 @@
   text-decoration: none;
   text-transform: lowercase;
   font: 18px "Trebuchet MS", Arial, Helvetica, sans-serif;
+/*   font: 18px */
   color: #FFFFFF;
 }
 
