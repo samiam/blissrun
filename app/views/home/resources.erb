@@ -1,2 +1,27 @@
+<%= stylesheet_link_tag "contact" %>
+
 <% @page_title = "Resources" %>
 
+<div id="container">
+
+<div id="left">
+
+  There is much information on mindfulness on the Internet.  Here are a few
+  links to get you started.
+
+  <p>
+    <%= link_to "Deer Park", "http://www.deerparkcenter.org/", :popup => true %>
+  <p>
+    <%= link_to "Plum Village", "http://www.plumvillage.org/", :popup => true %>
+  <p>
+    <%= link_to "Blue Cliff", "http://www.bluecliffmonastery.org/", :popup => true %>
+
+</div>
+
+<div id="right-clear">
+  <%= image_tag("mindfulness_road.jpg", :width => "300", :height => "300") %>
+</div>
+
+<div class="clearfloat"></div> 
+
+</div>

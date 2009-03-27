@@ -39,6 +39,9 @@ ActionController::Routing::Routes.draw do |map|
   map.connect "meetings",  :controller => "home", :action => "meetings"
   map.connect "resources", :controller => "home", :action => "resources"
   map.connect "contact",   :controller => "home", :action => "contact"
+#  map.connect "login",     :controller => "home", :action => "login"
+  map.login '/login', :controller => "session",  :action => 'new'
+
   
   # See how all your routes lay out with "rake routes"
 
