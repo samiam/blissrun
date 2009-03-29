@@ -5,7 +5,7 @@
 
 class HomeController < ActionController::Base
 
-#  before_filter :login, :except => :login
+  before_filter :login
 
   def index
   end
@@ -28,15 +28,21 @@ class HomeController < ActionController::Base
   def lab
   end
 
-#  def login
-#  end
-
-  private
   def login
-    flash[:notice] = "Login required"
-    session[:return_to] = request.request_uri  
-    redirect_to :login
-#    login_path  
+#    p session
+    if ! user_logged_in?
+      redirect_to :action => "login", :controller => "session"
+    end
+  end
+
+  def logout
+    reset_session
+    redirect_to :action => 'index', :controller => 'home'
+  end
+  
+  private
+  def user_logged_in?
+    return session[:user_id] != nil
   end
 
 end
