@@ -1,10 +1,4 @@
 /* Comments */
-/*
-* {
-  padding: 0;
-  margin: 0;
-}
-*/
 
 html, body {
     margin: 0 0 0 0px;
@@ -13,6 +7,7 @@ html, body {
 /*     margin: auto; */
 /*     padding: auto; */
     font: normal 12px arial, verdana, sans-serif;
+/*     font-family: Corbel; */
 /*     color: blue; */
 /*     background-color: #424244; */
     background: url(/images/img01.jpg) repeat-x left top;
