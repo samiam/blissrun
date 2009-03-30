@@ -1,25 +1,20 @@
 <%= stylesheet_link_tag "header.css" %>
 
-<% # try class instead of id -%>
-
-<div class="logo">
-<div id="header">
+<div class="header">
 
   <h1>Bliss Run Mindfulness Community</h1>
+
   <span id="header-subtitle">
     Mindfulness Practice in the Tradition of Thich Nhat Hanh
   </span>
 
-  <div id="menu">
-    <ul>
-      <li><%= link_to "Home",      :action => "index" %></li>
-      <li><%= link_to "About",     :action => "about" %></li>
-      <li><%= link_to "Meetings",  :action => "meetings" %></li>
-      <li><%= link_to "Resources", :action => "resources" %></li>
-      <li><%= link_to "Contact",   :action => "contact" %></li>
-      <li><%= link_to "Logout",    :action => "logout" %></li>
-    </ul>
-  </div>
+  <ul>
+    <li><%= link_to "Home",      :action => "index" %></li>
+    <li><%= link_to "About",     :action => "about" %></li>
+    <li><%= link_to "Meetings",  :action => "meetings" %></li>
+    <li><%= link_to "Resources", :action => "resources" %></li>
+    <li><%= link_to "Contact",   :action => "contact" %></li>
+    <li><%= link_to "Logout",    :action => "logout" %></li>
+  </ul>
 
-</div>
 </div>

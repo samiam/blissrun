@@ -8,7 +8,7 @@
     <meta http-equiv="Content-Language" content="en">
     <meta http-equiv="Content-Style-Type" content="text/css">
 
-    <meta name="keywords" content="bliss,run,mindfulness,community,columbus,ohio,thich,nhat,hanh">
+    <meta name="keywords" content="bliss,run,mindfulness,community,meditation,columbus,ohio,thich,nhat,hanh">
     <meta name="description" content="Bliss Run Mindfulness Community in Columbus, Ohio">
 
     <title>Bliss Run Mindfulness Community - <%= @page_title %></title>
@@ -17,7 +17,7 @@
   </head>
 
   <body>
-    <%= stylesheet_link_tag "default" %>
+    <% #= stylesheet_link_tag "default" %>
 
     <% if flash[:notice] || flash[:error] || flash[:success] -%>
       <%= puts :error, :notice, :success %>

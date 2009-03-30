@@ -1,7 +1,7 @@
-=begin
-  require 'rubygems'
-  require 'static_gmaps'
-=end
+require 'rubygems'
+require 'sass'
+
+Sass::Plugin.options[:style] = :expanded
 
 class HomeController < ActionController::Base
 
