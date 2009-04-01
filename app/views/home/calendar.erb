@@ -2,16 +2,26 @@
 
 <div class="container">
 
-<h3>Upcoming Events</h3>
+  <div id="left">
 
-April 11th - social gathering at a members' house.
+    <h3>Bliss Run Calendar</h3>
 
-<p>
+    <iframe src="https://www.google.com/calendar/hosted/blissrun.org/embed?showTitle=0&amp;height=400&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=info%40blissrun.org&amp;color=%232952A3&amp;src=ht3jlfaac5lfd6263ulfh4tql8%40group.calendar.google.com&amp;color=%23A32929&amp;ctz=America%2FNew_York" style=" border:solid 1px #777 " width="600" height="400" frameborder="0" scrolling="no"></iframe>
 
-<iframe src="https://www.google.com/calendar/hosted/blissrun.org/embed?title=Bliss%20Run%20Mindfulness%20Community%20Calendar&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=400&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=info%40blissrun.org&amp;color=%232952A3&amp;ctz=America%2FNew_York" style=" border-width:0 " width="600" height="400" frameborder="0" scrolling="no"></iframe>
+    <center>
+      <%= link_to "Full Calendar", "http://www.google.com/calendar/hosted/blissrun.org/embed?src=info%40blissrun.org", :popup => true %>
+    </center>
 
-<br>
+</div>
 
-<%= link_to "Bliss Run Calendar", "http://www.google.com/calendar/hosted/blissrun.org/embed?src=info%40blissrun.org", :popup => true %>
+  <div id="right-clear">
+
+    <h3>Upcoming Events</h3>
+
+<iframe src="https://www.google.com/calendar/hosted/blissrun.org/embed?showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=400&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=info%40blissrun.org&amp;color=%232952A3&amp;ctz=America%2FNew_York" style=" border:solid 1px #777 " width="300" height="400" frameborder="0" scrolling="no"></iframe>
+
+  </div>
+
+  <div class="clearfloat"></div> 
 
 </div>
