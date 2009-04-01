@@ -1,5 +1,11 @@
 # Be sure to restart your server when you modify this file
 
+# On Bluehost gems are local
+if ENV["HOME"] == "/home/succesy0"
+  ENV['GEM_PATH'] = '/home/succesy0/ruby/gems:/usr/lib/ruby/gems/1.8'
+#ENV['RAILS_ENV'] ||= 'production'
+end
+
 # Uncomment below to force Rails into production mode when
 # you don't control web/app server and can't set it the proper way
 # ENV['RAILS_ENV'] ||= 'production'
@@ -73,3 +79,8 @@ Rails::Initializer.run do |config|
   # Please note that observers generated using script/generate observer need to have an _observer suffix
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
 end
+
+# gems we need
+require 'rubygems'
+require 'sass'
+Sass::Plugin.options[:style] = :expanded
