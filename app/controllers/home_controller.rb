@@ -21,7 +21,7 @@ class HomeController < ActionController::Base
   def contact
   end
 
-  def lab
+  def calendar
   end
 
   def login

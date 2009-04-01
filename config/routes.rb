@@ -37,6 +37,7 @@ ActionController::Routing::Routes.draw do |map|
   map.root :controller => "home"
   map.connect "about",     :controller => "home", :action => "about"
   map.connect "meetings",  :controller => "home", :action => "meetings"
+  map.connect "calendar",  :controller => "home", :action => "calendar"
   map.connect "resources", :controller => "home", :action => "resources"
   map.connect "contact",   :controller => "home", :action => "contact"
   

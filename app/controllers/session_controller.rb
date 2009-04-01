@@ -2,7 +2,7 @@ class SessionController < ActionController::Base
 
   def login
     if request.post? and params[:user]
-      if (params[:user][:username] == "diane" and
+      if (params[:user][:username] == "test" and
           params[:user][:password] == "mindfulness")
         session[:user_id] = "1"
         redirect_to :controller => "home", :action => "index"
