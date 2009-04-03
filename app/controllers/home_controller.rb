@@ -1,6 +1,6 @@
 class HomeController < ActionController::Base
 
-  before_filter :login
+#  before_filter :login
 
   def home
   end
