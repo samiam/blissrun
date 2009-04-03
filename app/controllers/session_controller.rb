@@ -1,5 +1,6 @@
 class SessionController < ActionController::Base
 
+  # Change to use a file in /etc
   def login
     if request.post? and params[:user]
       if (params[:user][:username] == "test" and

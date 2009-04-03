@@ -9,13 +9,9 @@
   </span>
 
   <ul>
-    <li><%= link_to "Home",      :action => "index" %></li>
-    <li><%= link_to "About",     :action => "about" %></li>
-    <li><%= link_to "Meetings",  :action => "meetings" %></li>
-    <li><%= link_to "Calendar",  :action => "calendar" %></li>
-    <li><%= link_to "Resources", :action => "resources" %></li>
-    <li><%= link_to "Contact",   :action => "contact" %></li>
-    <li><%= link_to "Logout",    :action => "logout" %></li>
+    <% %w(home about meetings calendar resources contact logout).each do |item| %>
+      <li><%= link_to "#{item}", :action => "#{item}" %></li>
+    <% end %>
   </ul>
 
 </div>

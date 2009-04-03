@@ -2,7 +2,7 @@ class HomeController < ActionController::Base
 
   before_filter :login
 
-  def index
+  def home
   end
 
   def about
@@ -25,7 +25,6 @@ class HomeController < ActionController::Base
   end
 
   def login
-#    p session
     if ! user_logged_in?
       redirect_to :action => "login", :controller => "session"
     end
@@ -33,10 +32,11 @@ class HomeController < ActionController::Base
 
   def logout
     reset_session
-    redirect_to :action => 'index', :controller => 'home'
+    redirect_to :action => "index", :controller => "home"
   end
   
   private
+
   def user_logged_in?
     return session[:user_id] != nil
   end
