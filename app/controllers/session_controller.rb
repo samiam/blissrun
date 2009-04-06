@@ -6,7 +6,7 @@ class SessionController < ActionController::Base
       if (params[:user][:username] == "test" and
           params[:user][:password] == "mindfulness")
         session[:user_id] = "1"
-        redirect_to :controller => "home", :action => "index"
+        redirect_to root_url
       else
         flash[:notice] = "Invalid username/password combination."
       end

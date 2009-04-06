@@ -42,14 +42,8 @@ ActionController::Routing::Routes.draw do |map|
 #  map.connect ':controller/:action/:id.:format'
 
   # Root goes 'home' and other routes exist corresponding action
-  map.root     :controller => "home", :action => "home"
-  map.connect ":action", :controller => "home"
-=begin
-  map.connect "about",     :controller => "home", :action => "about"
-  map.connect "meetings",  :controller => "home", :action => "meetings"
-  map.connect "calendar",  :controller => "home", :action => "calendar"
-  map.connect "resources", :controller => "home", :action => "resources"
-  map.connect "contact",   :controller => "home", :action => "contact"
-=end
+  map.root                :controller => "home",    :action => "home"
+  map.login    "login",   :controller => "session", :action => "login"
+  map.connect  ":action", :controller => "home"
 
 end

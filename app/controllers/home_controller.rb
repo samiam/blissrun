@@ -26,13 +26,13 @@ class HomeController < ActionController::Base
 
   def login
     if ! user_logged_in?
-      redirect_to :action => "login", :controller => "session"
+      redirect_to login_url
     end
   end
 
   def logout
     reset_session
-    redirect_to :action => "index", :controller => "home"
+    redirect_to root_url
   end
   
   private
