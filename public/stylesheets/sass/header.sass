@@ -1,12 +1,21 @@
 !text_color = #FFF
 
+// 4 rounded corners
+// http://perishablepress.com/press/2008/11/24/perfect-rounded-corners-with-css/
+=all-four-rounded-corners
+  :-webkit-border-radius 10px
+  :-khtml-border-radius 10px
+  :-moz-border-radius 10px
+  :border-radius 10px
+
 .header
+  +all-four-rounded-corners
   :position relative
   :width 960px
   :height 200px
   :margin 0 auto
   :color = !text_color
-  :background url(/images/logo5.png) no-repeat left top
+  :background url(/images/logo2.png) no-repeat left top
   :font-family "Trebuchet MS", Helvetica, Arial, Verdana, sans serif, serif
   //:border dashed 2px red
 
