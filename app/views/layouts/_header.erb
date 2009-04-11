@@ -6,10 +6,12 @@
     Mindfulness Practice in the Tradition of Thich Nhat Hanh
   </span>
 
+  <div class="clearfloat"></div> 
+
   <ul>
     <% %w(home about meetings calendar resources contact logout).each do |item| %>
       <li><%= link_to "#{item}", :action => "#{item}" %></li>
     <% end %>
   </ul>
-
 </div>
+
