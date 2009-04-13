@@ -47,3 +47,27 @@ iframe
 
 html
   :background url(/images/img01-1.jpg) repeat-x left top
+
+// Round corners
+// 4 rounded corners
+// http://perishablepress.com/press/2008/11/24/perfect-rounded-corners-with-css/
+=all-four-rounded-corners
+  :-webkit-border-radius 10px
+  :-khtml-border-radius 10px
+  :-moz-border-radius 10px
+  :-o-border-radius 10px
+  :border-radius 10px
+
+.peace_hat_small
+  +all-four-rounded-corners
+  :width 310px
+  :height 461px
+  :background url('/images/peace_hat_small.png')
+
+/*
+<div id="spam">Hello</div>
+#spam:before
+  :content "good"
+*/
+  
+@import header
