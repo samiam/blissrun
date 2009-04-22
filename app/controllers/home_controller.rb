@@ -9,6 +9,7 @@ class HomeController < ActionController::Base
   before_filter :login
 
   def home
+    @page_title = "Home"
   end
 
   def about
