@@ -1,3 +1,9 @@
+# Test site w/o css turned on
+# Test site w/o javascript turned on
+# Test side w/images blocked
+# Add reCaptcha to contact page
+# Google analytics
+
 class HomeController < ActionController::Base
 
   before_filter :login
@@ -23,6 +29,7 @@ class HomeController < ActionController::Base
     @unsubscribe = "&#x6d;&#x69;&#x6e;&#x64;&#x66;&#x75;&#x6c;&#x6e;&#x65;&#x73;&#x73;&#x2d;&#x75;&#x6e;&#x73;&#x75;&#x62;&#x73;&#x63;&#x72;&#x69;&#x62;&#x65;&#x20;&#x40;&#x20;&#x62;&#x6c;&#x69;&#x73;&#x73;&#x72;&#x75;&#x6e;&#x2e;&#x6f;&#x72;&#x67;"
     # Spam methods
     # Use temporary mailbox
+    # Use plussed addresses
 =begin
 
     <script language="JavaScript">
