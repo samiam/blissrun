@@ -24,21 +24,19 @@
   :height 0
   :clear both
 
-// Footer
 #footer
   :text-align center
   :clear both
   :font-size small
 
-// Text
-#capitalize
+.capitalize
   :font-size larger
   :font-weight bold
 
-// meetings and calendar
 iframe
   :border 2px solid blue
 
+// View Large Map
 #vlm
   :color #0000FF
 
@@ -53,26 +51,12 @@ iframe
 html
   :background url(/images/img01-1.jpg) repeat-x left top
 
-// Round corners
-// 4 rounded corners
-// http://perishablepress.com/press/2008/11/24/perfect-rounded-corners-with-css/
-=all-four-rounded-corners
-  :-webkit-border-radius 10px
-  :-khtml-border-radius 10px
-  :-moz-border-radius 10px
-  :-o-border-radius 10px
-  :border-radius 10px
-
-.peace_hat_small
-  +all-four-rounded-corners
-  :width 310px
-  :height 461px
-  :background url('/images/peace_hat_small.png')
-
 /*
 <div id="spam">Hello</div>
 #spam:before
   :content "good"
 */
-  
+
+// images must come before header as it has rounded corners stuff
+@import images
 @import header
