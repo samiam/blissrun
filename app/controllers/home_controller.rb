@@ -23,6 +23,7 @@ class HomeController < ActionController::Base
   end
 
   def resources
+    @page_title = "Resources"
   end
 
   def contact
