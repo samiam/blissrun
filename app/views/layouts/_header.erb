@@ -3,14 +3,14 @@
   <h1>Bliss Run Mindfulness Community</h1>
 
   <span id="header-subtitle">
-    Mindfulness Practice in the Tradition of Thich Nhat Hanh
+    Mindfulness is the way of becoming friends with others.
   </span>
 
   <div class="clearfloat"></div> 
 
   <ul>
     <% %w(home about meetings calendar resources contact logout).each do |item| %>
-      <li><%= link_to "#{item}", :action => "#{item}" %></li>
+      <li><%= link_to nil, "#{item}" %></li>
     <% end %>
   </ul>
 </div>
