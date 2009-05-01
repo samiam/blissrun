@@ -20,7 +20,7 @@
     <%= render :partial => "layouts/header" %>
 
     <% if flash[:notice] || flash[:error] || flash[:success] -%>
-      <%= puts :error, :notice, :success %>
+      <%=  flash_div :error, :notice, :success %>
     <% end -%>
 
     <%= yield %>
