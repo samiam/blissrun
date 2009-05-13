@@ -77,3 +77,12 @@ end
 # Install haml: ./script/plugin install git://github.com/nex3/haml.git
 # Expand braces
 Sass::Plugin.options[:style] = :expanded
+
+# Captcha keys
+ENV['RECAPTCHA_PUBLIC_KEY']  = '6Le1VgYAAAAAANubqiC1fBhL-fcNpoPRWqfc8W-Z'
+ENV['RECAPTCHA_PRIVATE_KEY'] = '6Le1VgYAAAAAABqDyXtKYkQvbWnlVmfOSL6eqtxc'
+
+#
+#ublic Key: 01MnQLuvMxd0kMBc6Edix5EQ==
+
+#Private Key: 95E07C2EE247ACC170B3141EC078AB72 

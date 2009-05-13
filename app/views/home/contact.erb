@@ -1,12 +1,14 @@
 <% @page_title = "Contact" %>
 
+<%= javascript_include_tag :defaults %>
+
 <div class="container">
 
   <div id="left">
     <h2>We would love to hear from you!</h2>
 
     If you have any questions about our practice, feedback for our
-    website, or anything else, please feel free to email us:
+    website, or anything else, please feel free to email us.
     <p>
 
     <b>info</b> [at] <b>blissrun</b> [dot] <b>org</b>
@@ -22,8 +24,19 @@
     <br>
     <b>mindfulness-unsubscribe</b> [at] <b>blissrun</b> [dot] <b>org</b>
 
+<p>
+
+  <div id="recaptcha_form">
+  <% form_remote_tag :url => 'contact' do %>
+      <%= recaptcha_tags %>
+      <%= submit_tag "I'm Human" %>
+  <% end -%>
+  </div>
+  <div id="recaptcha_blinddown" style="display:none;">
+    <a href="#" onclick="Effect.BlindDown('recaptcha_blinddown'); return false;"></a>
   </div>
 
+  </div>
 
   <div id="right">
     <% #= image_tag("peace_hat_small.png") %>

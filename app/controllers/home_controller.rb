@@ -1,3 +1,4 @@
+require 'pp'
 # Test site w/o css turned on
 # Test site w/o javascript turned on
 # Test side w/images blocked
@@ -33,11 +34,37 @@ class HomeController < ActionController::Base
     # Use temporary mailbox
     # Use plussed addresses
 =begin
-
     <script language="JavaScript">
 document.write('<a h'+'ref="m'+'ailt'+'o:'+'%66%6f%6f%40%62%61%72%2e%63%6f%6d">&#112;&#112;&#112;<\/a>');
 </script>
 =end
+    tmp = <<-EOF
+    <h3>Congratulations - you are human!</h3>
+     Here's a list of our email addresses:<p>
+     <a href='mailto:info@blissrun.org'>info@blissrun.org</a>
+     <p>
+     <a href='mailto:mindfulness-subscribe@blissrun.org'>mindfulness-subscribe@blissrun.org</a>
+     <p>
+     <a href='mailto:mindfulness-unsubscribe@blissrun.org'>mindfulness-unsubscribe@blissrun.org</a>
+    EOF
+
+    if request.xhr?
+      pp params
+      ans = verify_recaptcha
+      pp ans
+
+      if ans
+        render :update do |page|
+          page.hide 'recaptcha_form'
+          page.visual_effect :blind_down, 'recaptcha_blinddown'
+          page.replace_html 'recaptcha_blinddown', tmp
+        end
+      else
+        render :update do |page|
+          page.redirect_to 'contact'
+        end
+      end
+    end
   end
 
   def calendar

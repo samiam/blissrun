@@ -45,6 +45,7 @@ ActionController::Routing::Routes.draw do |map|
   map.root                :controller => "home",    :action => "home"
   map.login    "login",   :controller => "session", :action => "login"
   map.docs     "/docs/:doc", :controller => "docs", :action => "show"
+  map.lab      "/lab",    :controller => "lab"
   map.connect  ":action", :controller => "home"
 
 end
