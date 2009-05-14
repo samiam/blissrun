@@ -1,6 +1,6 @@
 addrs = <<-EOF
-  <h3>Congratulations - you are human!</h3>
-   Here's our email addresses:<p>
+  <h2>Congratulations - you are human!</h2>
+   Our email addresses:<p>
    <a href='mailto:info@blissrun.org'>info@blissrun.org</a> (General)
    <p>
    <a href='mailto:mindfulness-subscribe@blissrun.org'>mindfulness-subscribe@blissrun.org</a>
