@@ -25,6 +25,13 @@
     different captcha.
     <p>
 
+<script type="text/javascript">
+  var RecaptchaOptions = { 
+      theme : 'clean', 
+      tabindex : 0
+  };
+</script>
+
     <% form_remote_tag :url => 'addresses' do %>
       <%= recaptcha_tags %>
       <%= submit_tag "I'm Human" %>
