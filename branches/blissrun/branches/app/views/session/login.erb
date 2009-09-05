@@ -1,0 +1,22 @@
+<h2>LOGIN</h2>
+
+This site is currently under construction.  Please login only if you
+are authorized to do so.
+
+<br>
+
+<% if flash[:notice] %>
+<p>
+<p>
+  <b><%= h flash[:notice] %></b>
+<% end %>
+<p>
+<p>
+
+<% form_for :user do |f| %>
+  <%= error_messages_for :user %>
+ 
+  Username: <%= f.text_field :username %><br/>
+  Password: <%= f.password_field :password %><br/>
+  <%= submit_tag "Login" %>
+<% end %>

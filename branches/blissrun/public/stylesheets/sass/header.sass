@@ -1,0 +1,45 @@
+!text_color = #FFF
+
+.header
+  +all-four-rounded-corners
+  :position relative
+  :width 960px
+  :height 200px
+  :margin 0 auto
+  :color = !text_color
+  :background url(/images/logo2.png) no-repeat left top
+  :font-family "Trebuchet MS", Helvetica, Arial, Verdana, sans serif, serif
+  //:border dashed 2px red
+
+  h1
+    :padding 3% 0 0 3%
+
+  #header-subtitle
+    :padding 0 0 0 3%
+    :font-style italic
+
+  ul
+    :padding 0 0 0 3%
+    /* One percent is for space below links
+    :margin 0 0 1% 0%
+    :font-weight bold
+    :list-style none
+    :line-height normal
+    :position absolute
+    :bottom 0px
+    //:border solid 1px yellow
+
+    li
+      :float left
+
+    a
+      :float left
+      :display block
+      :margin-right 30px
+      :margin-left 0px
+      :text-decoration none
+      :text-transform lowercase
+      :color = !text_color
+
+      &:hover
+        :text-decoration underline
