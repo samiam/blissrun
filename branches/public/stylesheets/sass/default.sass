@@ -1,0 +1,76 @@
+// Defaults
+.container
+  :margin 0 auto
+  :padding 10px 0 0 0
+  :width 960px
+
+  #left
+    :float left
+    :width 60%
+
+  #right
+    :float right
+    :width 33%
+    :padding 0px 0px 15px 15px
+
+  #right-line
+    :float right
+    :width 33%
+    :padding 0px 0px 15px 15px
+    :border-left 2px solid #000
+
+// For ie
+.clearfloat
+  :height 0
+  :clear both
+
+#footer
+  :text-align center
+  :clear both
+  :font-size small
+
+.capitalize
+  :font-size larger
+  :font-weight bold
+
+iframe
+  :border 2px solid blue
+
+// View Large Map
+#vlm
+  :color #0000FF
+
+// Old default
+//html, body
+//  :margin 0 0 0 0px
+//  :padding 0 0 0 0px
+//  :font normal 12px arial, verdana, sans-serif
+//  :background url(/images/img01.jpg) repeat-x left top
+//  :line-height 1.5em
+
+html
+  :background url(/images/img01-1.jpg) repeat-x left top
+
+/*
+<div id="spam">Hello</div>
+#spam:before
+  :content "good"
+*/
+
+.flash
+  background-color: #fff
+  border: solid 1px #c00
+  color: #c00
+  margin-bottom: 10px
+  margin-top: 10px
+
+  h1
+    background-color: #c00
+    color: #fff
+    padding: 3px
+    font-weight: bold
+    font-size: 12px
+
+// images must come before header as it has rounded corners stuff
+@import images
+@import header
