@@ -7,6 +7,7 @@
 class HomeController < ActionController::Base
 
 #  before_filter :login
+  before_filter :redirect_to_www
 
   def home
     @page_title = "Home"
@@ -55,6 +56,12 @@ class HomeController < ActionController::Base
 
   def user_logged_in?
     return session[:user_id] != nil
+  end
+
+  def redirect_to_www
+    if request.host == "blissrun.org"
+      redirect_to url_for( :host => "www.blissrun.org" )
+    end
   end
 
 end
