@@ -18,32 +18,35 @@
 
     <div id="recaptcha_form">
 
-    <h2>Email addresses</h2>
+      <h2>Email addresses</h2>
 
-    To help us eliminate as much spam as possible we use a captcha.
-    Please type in the string below to show our email addresses.
-    <p>
+      To help us eliminate as much spam as possible we use a captcha.
+      Please type in the string below to show our email addresses.
+      <p>
 
-<script type="text/javascript">
-  var RecaptchaOptions = { 
-      theme : 'clean', 
-      tabindex : 0
-  };
-</script>
+      <script type="text/javascript">
+        var RecaptchaOptions = { 
+            theme : 'clean', 
+            tabindex : 0
+        };
+      </script>
 
-    <% form_remote_tag :url => 'addresses' do %>
-      <%= recaptcha_tags %>
-      <%= submit_tag "I'm Human" %>
-    <% end -%>
+      <% form_remote_tag :url => 'addresses' do %>
+        <%= recaptcha_tags %>
+        <%= submit_tag "I'm Human" %>
+      <% end -%>
+
     </div>
+
     <div id="recaptcha_blinddown" style="display:none;">
       <a href="#" onclick="Effect.BlindDown('recaptcha_blinddown'); return false;"></a>
     </div>
+
   </div>
 
   <div id="right">
-    <% #= image_tag("peace_hat_small.png") %>
-    <div class="peace_hat_small"></div>
+    <div class="peace_hat_small">
+    </div>
   </div>
 
 </div>
