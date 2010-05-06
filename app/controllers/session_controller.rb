@@ -4,7 +4,7 @@ class SessionController < ActionController::Base
   def login
     if request.post? and params[:user]
       if (params[:user][:username] == "test" and
-          params[:user][:password] == "mindfulness")
+          params[:user][:password] == "test")
         session[:user_id] = "1"
         flash[:notice] = nil
         redirect_to root_url
