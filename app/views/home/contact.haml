@@ -22,14 +22,8 @@
       Please type in the string below to show our email addresses.
       %p
 
-      :javascript
-         var RecaptchaOptions = {
-           theme : 'clean',
-           tabindex : 0
-         };
-
       - form_remote_tag :url => 'addresses' do
-        = recaptcha_tags
+        = recaptcha_tags :display => { :theme => 'clean' }
         = submit_tag "I'm Human"
 
     %div#recaptcha_blinddown{ :style => "display:none;" }
