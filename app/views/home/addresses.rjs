@@ -1,17 +1,7 @@
-addrs = <<-EOF
-  <h2>Congratulations - you are human!</h2>
-   Our email addresses:<p>
-   <a href='mailto:info@blissrun.org'>info@blissrun.org</a> (General)
-   <p>
-   <a href='mailto:mindfulness-subscribe@blissrun.org'>mindfulness-subscribe@blissrun.org</a>
-   <p>
-   <a href='mailto:mindfulness-unsubscribe@blissrun.org'>mindfulness-unsubscribe@blissrun.org</a>
-EOF
-
-if @ans
-   page.hide 'recaptcha_form'
-   page.visual_effect :blind_down, 'recaptcha_blinddown'
-   page.replace_html 'recaptcha_blinddown', addrs
+if @captcha_ans
+  page.hide 'recaptcha_form'
+  page.visual_effect :blind_down, 'recaptcha_blinddown'
+  page.replace_html 'recaptcha_blinddown', @addrs
 else
-   page.reload
+  page.reload
 end
