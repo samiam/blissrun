@@ -81,3 +81,6 @@ Sass::Plugin.options[:style] = :expanded
 # Recaptcha keys
 ENV['RECAPTCHA_PUBLIC_KEY']  = '6Le1VgYAAAAAANubqiC1fBhL-fcNpoPRWqfc8W-Z'
 ENV['RECAPTCHA_PRIVATE_KEY'] = '6Le1VgYAAAAAABqDyXtKYkQvbWnlVmfOSL6eqtxc'
+
+# Hosting provider removes HOME from env and make it difficult to get HOME... thanks
+ENV['HOME'] = `logname`.chop == "succesy0" ? "/home/succesy0" : ENV['HOME']
