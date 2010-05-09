@@ -44,7 +44,7 @@ ActionController::Routing::Routes.draw do |map|
   # Root goes 'home' and other routes exist corresponding action
   map.root                :controller => "home",    :action => "home"
   map.login    "login",   :controller => "session", :action => "login"
-  map.docs     "/docs/:doc", :controller => "docs", :action => "show"
+  map.docs     "/docs/:doc", :controller => "docs", :action => "show", :requirements => {:doc => /[\w]+/ }
   map.lab      "/lab",    :controller => "lab"
   map.connect  ":action", :controller => "home"
 
