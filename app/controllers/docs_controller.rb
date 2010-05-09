@@ -1,15 +1,16 @@
 class DocsController < ActionController::Base
-  layout 'docs'
+
   DOCS = %w(five_mindfulness_trainings
             14_mindfulness_trainings
             five_remembrances
             concepts)
 
   def show
-    if DOCS.include?( params[:doc] )
-      render :file => "/docs/#{params[:doc]}", :layout => false
+    name = params[:doc]
+    if DOCS.include?( name )
+      render :file => "/docs/#{name}"
     else
-      flash[:error] = "No such document: #{params[:doc]}"
+      flash[:error] = "No such document: #{name}"
       redirect_to root_url
     end
   end
