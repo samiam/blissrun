@@ -43,7 +43,8 @@ ActionController::Routing::Routes.draw do |map|
 
   # Root goes 'home' and other routes exist corresponding action
   map.root                :controller => "home",    :action => "home"
-  map.docs     "/docs/:doc", :controller => "docs", :action => "show", :requirements => {:doc => /[\w]+/ }
+  map.connect  "/docs/:doc", :controller => "docs", :action => "show",
+                             :requirements => { :doc => /[\w]+/ }
   map.connect  ":action", :controller => "home"
 
   # Development routes no longer used
