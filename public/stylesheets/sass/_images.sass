@@ -2,33 +2,38 @@
 // 4 rounded corners
 // http://perishablepress.com/press/2008/11/24/perfect-rounded-corners-with-css/
 
-=all-four-rounded-corners
-  :-webkit-border-radius 10px
-  :-khtml-border-radius 10px
-  :-moz-border-radius 10px
-  :-o-border-radius 10px
-  :border-radius 10px
+
+=all-four-rounded-corners(!radius = 10px)
+  :-webkit-border-radius = !radius
+  :-khtml-border-radius = !radius
+  :-moz-border-radius = !radius
+  :-o-border-radius = !radius
+  :border-radius = !radius
 
 .peace_hat_small
   +all-four-rounded-corners
   :width 310px
   :height 461px
   :background url('/images/peace_hat_small.png')
+  :margin auto
 
 .stones
   +all-four-rounded-corners
   :width 284px
   :height 381px
   :background url('/images/stones.png')
+  :margin auto
 
 .mindfulness
   +all-four-rounded-corners
   :width 300px
   :height 225px
   :background url('/images/mindfulness_road_300x225.jpg')
+  :margin auto
 
 .watershed_sign
   +all-four-rounded-corners
   :width 300px
   :height 132px
   :background url('/images/watershed_sign.jpg')
+  :margin auto
