@@ -37,7 +37,6 @@ class HomeController < ActionController::Base
 
   def addresses
     redirect_to root_url unless request.xhr?
-    @addrs = read_addresses
     @captcha_ans = verify_recaptcha
   end
 
@@ -62,16 +61,6 @@ class HomeController < ActionController::Base
     if request.host == "blissrun.org"
       redirect_to url_for( :host => "www.blissrun.org" )
     end
-  end
-
-  # The html file has the email addresses.  This file is stored outside of the
-  # source repository to keep robots from harvesting the plaintext email addrs.
-  def read_addresses
-    addrs_file = ENV['HOME'] + "/etc/blissrun.org/addresses.html"
-    return File.read( addrs_file ) rescue err = "Error: #{$!}"
-    logger.error( err )
-    "<h2>Oops - sorry there has been an error.</h2>" + err +
-    "<p>The error has been logged and we will fix it soon.</p>"
   end
 
 end
