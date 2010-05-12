@@ -2,7 +2,7 @@
 
 # Uncomment below to force Rails into production mode when
 # you don't control web/app server and can't set it the proper way
-# ENV['RAILS_ENV'] ||= 'production'
+ENV['RAILS_ENV'] = 'production'
 
 # Specifies gem version of Rails to use when vendor/rails is not present
 RAILS_GEM_VERSION = '2.3.5' unless defined? RAILS_GEM_VERSION
@@ -74,13 +74,3 @@ Rails::Initializer.run do |config|
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
 end
 
-# Install haml: ./script/plugin install git://github.com/nex3/haml.git
-# Expand braces
-Sass::Plugin.options[:style] = :expanded
-
-# Recaptcha keys
-ENV['RECAPTCHA_PUBLIC_KEY']  = '6Le1VgYAAAAAANubqiC1fBhL-fcNpoPRWqfc8W-Z'
-ENV['RECAPTCHA_PRIVATE_KEY'] = '6Le1VgYAAAAAABqDyXtKYkQvbWnlVmfOSL6eqtxc'
-
-# Hosting provider removes HOME from env and make it difficult to get HOME... thanks
-ENV['HOME'] = `whoami`.chop == "succesy0" ? "/home/succesy0" : ENV['HOME']
