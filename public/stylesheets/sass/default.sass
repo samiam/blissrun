@@ -7,12 +7,18 @@
     :float left
     :width 60%
     :padding 0 0 0 10px
-    -#:border dashed 1px red
+    /* :border dashed 1px red */
 
   #right
     :float right
     :width 38%
-    -#:border dashed 1px red
+    /* :border dashed 1px red */
+
+  // TODO: ensure calendar remains inside div
+  #right.calendar
+    :float right
+    :width 30%
+    /* :border dashed 1px red */
 
   #right-line
     :float right
@@ -37,22 +43,8 @@
 iframe
   :border 2px solid blue
 
-// Old default
-//html, body
-//  :margin 0 0 0 0px
-//  :padding 0 0 0 0px
-//  :font normal 12px arial, verdana, sans-serif
-//  :background url(/images/img01.jpg) repeat-x left top
-//  :line-height 1.5em
-
 html
   :background url(/images/img01-1.jpg) repeat-x left top
-
--#
-  <div id="spam">Hello</div>
-    #spam:before
-    :content "good"
-
 
 .flash
   background-color: #fff
