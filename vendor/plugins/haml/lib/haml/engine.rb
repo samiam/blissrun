@@ -85,14 +85,21 @@ module Haml
         :format => :xhtml,
         :escape_html => false,
       }
+
+
+      template = check_haml_encoding(template) do |msg, line|
+        raise Haml::Error.new(msg, line)
+      end
+
       unless ruby1_8?
-        @options[:encoding] = Encoding.default_internal || "utf-8"
+        @options[:encoding] = Encoding.default_internal || template.encoding
+        @options[:encoding] = "utf-8" if @options[:encoding].name == "US-ASCII"
       end
       @options.merge! options.reject {|k, v| v.nil?}
       @index = 0
 
       unless [:xhtml, :html4, :html5].include?(@options[:format])
-        raise Haml::Error, "Invalid format #{@options[:format].inspect}"
+        raise Haml::Error, "Invalid output format #{@options[:format].inspect}"
       end
 
       if @options[:encoding] && @options[:encoding].is_a?(Encoding)
@@ -113,7 +120,9 @@ module Haml
 
       precompile
     rescue Haml::Error => e
-      e.backtrace.unshift "#{@options[:filename]}:#{(e.line ? e.line + 1 : @index) + @options[:line] - 1}" if @index
+      if @index || e.line
+        e.backtrace.unshift "#{@options[:filename]}:#{(e.line ? e.line + 1 : @index) + @options[:line] - 1}"
+      end
       raise
     end
 

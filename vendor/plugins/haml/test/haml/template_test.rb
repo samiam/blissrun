@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 require File.dirname(__FILE__) + '/../test_helper'
-require 'haml/template'
 require 'sass/plugin'
 require File.dirname(__FILE__) + '/mocks/article'
 
@@ -194,6 +193,26 @@ class TemplateTest < Test::Unit::TestCase
     assert_equal("2\n", render("= 1+1"))
   end
 
+  unless Haml::Util.ap_geq_3?
+    def test_form_for_error_return
+      assert_raise(Haml::Error) { render(<<HAML) }
+= form_for :article, @article, :url => '' do |f|
+  Title:
+  = f.text_field :title
+  Body:
+  = f.text_field :body
+HAML
+    end
+
+    def test_form_tag_error_return
+      assert_raise(Haml::Error) { render(<<HAML) }
+= form_tag '' do
+  Title:
+  Body:
+HAML
+    end
+  end
+
   def test_haml_options
     old_options = Haml::Template.options.dup
     Haml::Template.options[:suppress_eval] = true
@@ -261,7 +280,7 @@ END
     def test_av_block_deprecation_warning
       assert_warning(/^DEPRECATION WARNING: - style block helpers are deprecated\. Please use =\./) do
         assert_equal <<HTML, render(<<HAML, :action_view)
-<form action="" method="post">
+<form #{rails_form_attr}action="" method="post">#{rails_form_opener}
   Title:
   <input id="article_title" name="article[title]" size="30" type="text" value="Hello" />
   Body:
@@ -360,7 +379,7 @@ HAML
 
     def test_xss_protection_with_form_for
       assert_equal(<<HTML, render(<<HAML, :action_view))
-<form action="" method="post">
+<form #{rails_form_attr}action="" method="post">#{rails_form_opener}
   Title:
   <input id="article_title" name="article[title]" size="30" type="text" value="Hello" />
   Body:
@@ -381,6 +400,17 @@ window.location.reload();
 HTML
 = update_page do |p|
   - p.reload
+HAML
+    end
+
+    def test_cache
+      @base.controller = ActionController::Base.new
+      @base.controller.perform_caching = false
+      assert_equal(<<HTML, render(<<HAML, :action_view))
+Test
+HTML
+- cache do
+  Test
 HAML
     end
   end
