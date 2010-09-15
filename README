@@ -1,13 +1,11 @@
 A static website for Bliss Run Mindfulness Community in Columbus, OH.
 
-Visit http://www.blissrun.org/ 
-
 Development:
 
 Application was written in Rails.  Sinatra would have been fine, but
 the hosting company didn't support Rack, everything is fcgi and it was
-a pain to get Sinatra working in that environment.  Rails wasn't much
-better.
+a pain to get Sinatra working in that environment.  Frankly, rails
+wasn't much better with the hosting company.
 
 Application setup:
 
@@ -16,11 +14,11 @@ Install rails on system
 Freeze it:
   rake rails:freeze:edge RELEASE=2.3.5
 
-To update:
+Update it:
   rake rails:unfreeze
-  rake rails:freeze:edge RELEASE=<new_release>
+  rake rails:freeze:edge RELEASE=2.3.8
 
-Install necessary plugins.
+Install necessary plugins:
   script/plugin -v install git://github.com/nex3/haml.git  -r tags/3.0.18
   script/plugin install git://github.com/ambethia/recaptcha.git
 
@@ -28,97 +26,14 @@ Hosting setup:
 
 Add symlink from public_html to rails/public directory:
 
-/home/succesy0/public_html/blissrun -> ../etc/rails_apps/blissrun/public/
+~/public_html/blissrun -> ../etc/rails_apps/blissrun/public/
 
 These files MUST be added to the public directory:
 
 644 .htaccess
+755 dispatch.cgi
 755 dispatch.fcgi
 755 dispatch.rb
-
-============= .htaccess =============
-# General Apache options
-AddHandler fcgid-script .fcgi
-AddHandler cgi-script .cgi
-#Options +FollowSymLinks +ExecCGI
-
-# If you don't want Rails to look in certain directories,
-# use the following rewrite rules so that Apache won't rewrite certain requests
-# 
-# Example:
-#   RewriteCond %{REQUEST_URI} ^/notrails.*
-#   RewriteRule .* - [L]
-
-# Redirect all requests not available on the filesystem to Rails
-# By default the cgi dispatcher is used which is very slow
-# 
-# For better performance replace the dispatcher with the fastcgi one
-#
-# Example:
-#   RewriteRule ^(.*)$ dispatch.fcgi [QSA,L]
-RewriteEngine On
-
-# If your Rails application is accessed via an Alias directive,
-# then you MUST also set the RewriteBase in this htaccess file.
-#
-# Example:
-#   Alias /myrailsapp /path/to/myrailsapp/public
-#   RewriteBase /myrailsapp
-
-RewriteBase /
-RewriteRule ^$ index.html [QSA]
-RewriteRule ^([^.]+)$ $1.html [QSA]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ dispatch.fcgi [QSA,L]
-
-# In case Rails experiences terminal errors
-# Instead of displaying this message you can supply a file here which will be rendered instead
-# 
-# Example:
-#   ErrorDocument 500 /500.html
-
-ErrorDocument 500 "<h2>Application error</h2>Rails application failed to start properly"
-
-
-============= dispatch.fcgi =============
-
-#!/usr/bin/ruby
-#
-# You may specify the path to the FastCGI crash log (a log of unhandled
-# exceptions which forced the FastCGI instance to exit, great for debugging)
-# and the number of requests to process before running garbage collection.
-#
-# By default, the FastCGI crash log is RAILS_ROOT/log/fastcgi.crash.log
-# and the GC period is nil (turned off).  A reasonable number of requests
-# could range from 10-100 depending on the memory footprint of your app.
-#
-# Example:
-#   # Default log path, normal GC behavior.
-#   RailsFCGIHandler.process!
-#
-#   # Default log path, 50 requests between GC.
-#   RailsFCGIHandler.process! nil, 50
-#
-#   # Custom log path, normal GC behavior.
-#   RailsFCGIHandler.process! '/var/log/myapp_fcgi_crash.log'
-#
-require File.dirname(__FILE__) + "/../config/environment"
-require 'fcgi_handler'
-
-RailsFCGIHandler.process!
-
-=============== dispatch.rb ========================
-#!/usr/bin/ruby
-
-require File.dirname(__FILE__) + "/../config/environment" unless defined?(RAILS_ROOT)
-
-# If you're using RubyGems and mod_ruby, this require should be changed to an absolute path one, like:
-# "/usr/local/lib/ruby/gems/1.8/gems/rails-0.8.0/lib/dispatcher" -- otherwise performance is severely impaired
-require "dispatcher"
-
-ADDITIONAL_LOAD_PATHS.reverse.each { |dir| $:.unshift(dir) if File.directory?(dir) } if defined?(Apache::RubyRun)
-Dispatcher.dispatch
-
 
 At this point you should be able to visit web site and see the Rails
 environment file.
