@@ -17,6 +17,7 @@ Freeze it:
 Update it:
   rake rails:unfreeze
   rake rails:freeze:edge RELEASE=2.3.8
+  Update config/environment.rb RAILS_GEM_VERSION = '2.3.10'
 
 Install necessary plugins:
   script/plugin -v install git://github.com/nex3/haml.git  -r tags/3.0.18
