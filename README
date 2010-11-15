@@ -39,3 +39,4 @@ These files MUST be added to the public directory:
 At this point you should be able to visit web site and see the Rails
 environment file.
 
+beta.blissrun.org is a sub-domain for testing.  Usually off.
