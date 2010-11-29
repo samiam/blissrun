@@ -19,8 +19,12 @@ class HomeController < ActionController::Base
   def meetings
     @page_title = "Meetings and Events"
 
-    @map = %q(<iframe width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=2685+E+Livingston+Ave+Columbus+OH+43209&amp;sll=39.947072,-82.925663&amp;sspn=0.0114,0.021865&amp;ie=UTF8&amp;ll=39.954951,-82.922487&amp;spn=0.019738,0.025749&amp;z=14&amp;iwloc=addr&amp;output=embed"></iframe>)
-    @larger_map_link = %q(<a href="http://maps.google.com/maps?hl=en&amp;q=2685+E+Livingston+Ave+Columbus,+OH+43209&amp;ie=UTF8&amp;ll=39.947977,-82.925062&amp;spn=0.01974,0.025749&amp;z=14&amp;source=embed" target="_blank">View Larger Map</a>)
+    @map = %q(
+             <iframe width="350" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=4211+Maize+Road+Columbus,+OH+43224&amp;sll=40.051618,-82.989158&amp;sspn=0.010841,0.013905&amp;g=4211+Maize+Road+r+Columbus,+OH+43224&amp;ie=UTF8&amp;hq=&amp;hnear=4211+Maize+Rd,+Columbus,+Franklin,+Ohio+43224&amp;ll=40.056724,-82.98789&amp;spn=0.026278,0.029955&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe>
+             )
+    @larger_map_link = %q(
+             <a href="http://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=4211+Maize+Road+Columbus,+OH+43224&amp;sll=40.051618,-82.989158&amp;sspn=0.010841,0.013905&amp;g=4211+Maize+Road+r+Columbus,+OH+43224&amp;ie=UTF8&amp;hq=&amp;hnear=4211+Maize+Rd,+Columbus,+Franklin,+Ohio+43224&amp;ll=40.056724,-82.98789&amp;spn=0.026278,0.029955&amp;z=14&amp;iwloc=A" style="color:#0000FF;text-align:left">View Larger Map</a>
+             )
   end
 
   def calendar
