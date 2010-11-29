@@ -10,13 +10,13 @@
 
   <ul>
     <% %w(home about meetings calendar resources contact).each do |item| %>
-      <li><%= link_to nil, "#{item}" %></li>
+      <li><%= link_to nil, item %></li>
     <% end %>
   </ul>
 </div>
 <div class="container">
   <h3 style="color:red;padding:0 0 0 10px;">
-    UPDATE: as of 12/2/2010 we have a <em>new</em>
-    <%= link_to "meeting location.", "meetings" -%>
+    UPDATE: as of 12/2/2010 we have a
+    <em><%= link_to "new meeting location.", "meetings" -%></em>
   </h3>
 </div>
