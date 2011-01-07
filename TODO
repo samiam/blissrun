@@ -1,0 +1,47 @@
+TODO:
+
+Clean up images - what's active, what's not, what's worth keeping
+
+Move passwords out of session_controller
+
+Add copyright comment to file
+
+calendar.haml - move iframe to controller
+                see what happens if put in a right container since
+                left overlaps
+
+comments in contact.haml change to -#
+
+Clean up code to go w/full sass
+  layouts/footer and header convert to haml and home.erb
+
+comment routes.rb better
+
+create a README
+  architecture
+  what files you added/deleted from stock rails
+  plugins we rely on
+  setup
+
+clean up stylesheet sass files
+
+Document image size - can right's be bigger than 300px?
+
+Google analytics
+
+Can code be pulled down from Heroku?
+
+docs error should go back to docs page not home
+
+Use Heroku as backup
+Convert svn to git repository
+
+css-tips use spriteme
+
+Now add license
+
+Mailing list - make easier
+
+Other things to look at:
+whyslow
+radiant

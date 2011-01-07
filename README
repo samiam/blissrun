@@ -29,7 +29,8 @@ Add symlink from public_html to rails/public directory:
 
 ~/public_html/blissrun -> ../etc/rails_apps/blissrun/public/
 
-These files MUST be added to the public directory:
+Files below MUST be added to the public directory.  Content is in
+support database or see github:
 
 644 .htaccess
 755 dispatch.cgi
@@ -40,3 +41,5 @@ At this point you should be able to visit web site and see the Rails
 environment file.
 
 beta.blissrun.org is a sub-domain for testing.  Usually off.
+
+Install git on hosting as they don't have it.
