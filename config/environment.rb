@@ -5,7 +5,7 @@
 ENV['RAILS_ENV'] = 'production'
 
 # Specifies gem version of Rails to use when vendor/rails is not present
-RAILS_GEM_VERSION = '2.3.10' unless defined? RAILS_GEM_VERSION
+RAILS_GEM_VERSION = '2.3.18' unless defined? RAILS_GEM_VERSION
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
@@ -58,7 +58,7 @@ Rails::Initializer.run do |config|
   # Make sure the secret is at least 30 characters and all random, 
   # no regular words or you'll be exposed to dictionary attacks.
   config.action_controller.session = {
-    :session_key => '_blissrun_session',
+    :key         => '_blissrun_session',
     :secret      => '3631469d49399d831f36b6838ac09302bf09408f87670c08e0485f57923a21fd2024cc7c331d7b4d2a80bf48c30622cde7c26d99b6b36499a77f79e27432ddb7'
   }
 

@@ -1,5 +1,17 @@
 A static website for Bliss Run Mindfulness Community in Columbus, OH.
 
+New:  November 2013
+
+Basics to get working on old rails 2
+
+rvm rubygems latest-1.8
+
+bundle install
+
+Update config/environment.rb RAILS_GEM_VERSION = '2.3.10'
+
+----
+
 Development:
 
 Application was written in Rails.  Sinatra would have been fine, but
