@@ -1,0 +1,25 @@
+.container
+  #left
+    %h2 We would love to hear from you!
+
+    If you have any questions about our practice, feedback for our
+    website, or anything else, please feel free to email us.
+
+    %h2 Mailing List
+
+    We also have a low volume mailing list informing you of upcoming
+    events, including days of mindfulness, retreats, etc.  Send an
+    email to the subscribe address and we'll add you to the list.
+
+    %h2 Email Addresses
+
+    To help us eliminate as much spam as possible we use a captcha.
+    Please enter captcha and then submit form to show our email addresses.
+    %p
+
+    = form_tag('addresses', remote: true, id: 'recaptcha_form') do
+      = recaptcha_tags
+      = submit_tag("I'm Human", id: 'recaptcha_button')
+
+  #right
+    #peace_hat_small

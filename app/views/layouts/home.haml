@@ -1,0 +1,31 @@
+!!! XML
+!!!
+%html
+  %head
+    %meta{:http-equiv => "Content-Type", :content => "text/html; charset=utf-8"}/
+    %meta{:http-equiv => "Content-Language", :content => "en"}/
+    %meta{:http-equiv => "Content-Style-Type", :content => "text/css"}/
+    %meta{:name => "keywords", :content => "bliss,run,mindfulness,community,meditation,columbus,ohio,thich,nhat,hanh"}/
+    %meta{:name => "description", :content => "Bliss Run Mindfulness Community in Columbus Ohio"}/
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}/
+
+    %title
+      = @page_title
+
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    = stylesheet_link_tag :blissrun
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+  %body
+    = render :partial => "layouts/header"
+
+    - flash.each do |name, msg|
+      = content_tag :div, msg, class: name
+
+    = yield
+
+    .footer<
+      Copyright 2009-
+      = Time.now.strftime("%Y")
