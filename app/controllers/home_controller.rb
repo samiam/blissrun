@@ -18,10 +18,10 @@ class HomeController < ApplicationController
   def meetings
     @page_title = "Meetings and Events"
 
+    # 360(w) x 400(h), change iframe -> object, strip other attrs
     @map = %q(
-        <iframe width="350" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=4211+Maize+Road+Columbus,+OH+43224&amp;sll=40.051618,-82.989158&amp;sspn=0.010841,0.013905&amp;g=4211+Maize+Road+r+Columbus,+OH+43224&amp;ie=UTF8&amp;hq=&amp;hnear=4211+Maize+Rd,+Columbus,+Franklin,+Ohio+43224&amp;ll=40.056724,-82.98789&amp;spn=0.026278,0.029955&amp;z=14&amp;iwloc=A&amp;output=embed">
-        </iframe>
-      )
+      <object data="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13345.004751854502!2d-82.99852404112917!3d40.06019207556962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88388b814486f4a7%3A0x9a83990db4ea7656!2s4211+Maize+Rd%2C+Columbus%2C+OH+43224!5e0!3m2!1sen!2sus!4v1549933654254" width="360" height="400"></object>
+    )
   end
 
   def calendar

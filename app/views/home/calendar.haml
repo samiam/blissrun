@@ -1,7 +1,8 @@
 .container
   #left
-    %h3 Bliss Run Calendar
     For more information on any event please click on the event.
 
-    / Params:  800(w) x 600(h), turn off tabs and calendar list, strip style
-    %iframe( src="https://calendar.google.com/calendar/b/1/embed?showTabs=0&amp;showCalendars=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=info%40blissrun.org&amp;color=%2329527A&amp;ctz=America%2FNew_York" width="800" height="600" frameborder="0" scrolling="no" )
+    / Params:  800(w) x 400(h), turn off tabs, calendar list, strip style
+    / Change:  iframe -> object, src -> data attributes
+    / Add: showTabs=0 & showCalendars=0
+    %object(data="https://calendar.google.com/calendar/embed?src=info%40blissrun.org&ctz=America%2FNew_York&showTabs=0&showCalendars=0" width="800" height="400")
