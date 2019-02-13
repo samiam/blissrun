@@ -3,13 +3,10 @@ Rails.application.routes.draw do
 
   root to: 'home#home'
 
-  get 'home', to: 'home#home'
-  get 'about', to: 'home#about'
-  get 'meetings', to: 'home#meetings'
-  get 'calendar', to: 'home#calendar'
-  get 'resources', to: 'home#resources'
-  get 'contact', to: 'home#contact'
-  post 'addresses', to: 'home#addresses'
+  %w(home about meetings calendar resources contact).each do |route|
+    get route, to: "home##{route}"
+  end
+  post 'addresses', to: 'home#addresses'   # on contact page
 
   resources :docs, only: [:show]
 end
