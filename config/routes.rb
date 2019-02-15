@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   root to: 'home#home'
 
   %w(home about meetings calendar resources contact).each do |route|
-    get route, to: "home##{route}"
+    get "/#{route}", to: "home##{route}"
   end
-  post 'addresses', to: 'home#addresses'   # on contact page
+  post '/addresses', to: 'home#addresses'   # on contact page
 
-  resources :docs, only: [:show]
+  get '/docs/:id', to: 'docs#show', as: 'doc'
 end
