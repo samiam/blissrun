@@ -8,32 +8,13 @@
     %meta{:name => "description", :content => "Bliss Run Mindfulness Community in Columbus Ohio"}/
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}/
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    %script{:async=> "", :src => "https://www.googletagmanager.com/gtag/js?id=UA-134361431-1"}
-    :javascript
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-134361431-1');
-
-      // Work around Turbolinks
-      // https://www.mskog.com/posts/google-analytics-gtag-with-rails-5-and-turbolinks/
-      document.addEventListener('turbolinks:load', event => {
-        if (typeof gtag === 'function') {
-          gtag('config', 'UA-134361431-1', {
-            'page_location': event.data.url
-          });
-        }
-      });
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
     %title
       = @page_title
-
-    = csrf_meta_tags
-    = csp_meta_tag
-
-    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   %body
     = render :partial => "layouts/header"
