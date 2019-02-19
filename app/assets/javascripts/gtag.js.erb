@@ -1,0 +1,31 @@
+<% if Rails.env == 'production' %>
+  // I could have just included all this in the layout - it's simple.
+  // But I'm trying to take advantage of turbolinks and put javascript
+  // where it belongs - in js files, not html code.
+
+  // No import for javascript
+  // http://railsapps.github.io/rails-javascript-include-external.html
+  function dynamicallyLoadScript(url) {
+      var script = document.createElement("script");  // create a script DOM node
+      script.src = url;  // set its src to the provided URL
+
+      document.head.appendChild(script);  // add it to the end of the head section of the page (could change 'head' to 'body' to add it to the end of the body section instead)
+  }
+  dynamicallyLoadScript("https://www.googletagmanager.com/gtag/js?id=UA-134361431-1");
+
+  // Actual google tag
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-134361431-1');
+
+  // Work around Turbolinks
+  // https://www.mskog.com/posts/google-analytics-gtag-with-rails-5-and-turbolinks/
+  document.addEventListener('turbolinks:load', event => {
+    if (typeof gtag === 'function') {
+      gtag('config', 'UA-134361431-1', {
+        'page_location': event.data.url
+      });
+    }
+  });
+<% end %>
