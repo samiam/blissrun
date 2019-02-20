@@ -1,8 +1,3 @@
-# Test site w/o css turned on
-# Test site w/o javascript turned on
-# Test side w/images blocked
-# Google analytics?
-
 require 'base64'
 
 class HomeController < ApplicationController
