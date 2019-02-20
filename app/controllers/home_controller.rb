@@ -8,16 +8,12 @@ require 'base64'
 class HomeController < ApplicationController
 
   def home
-    @page_title = "Home"
   end
 
   def about
-    @page_title = "About Us"
   end
 
   def meetings
-    @page_title = "Meetings and Events"
-
     # 360(w) x 400(h), change iframe -> object, strip other attrs
     @map = %q(
       <object data="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13345.004751854502!2d-82.99852404112917!3d40.06019207556962!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88388b814486f4a7%3A0x9a83990db4ea7656!2s4211+Maize+Rd%2C+Columbus%2C+OH+43224!5e0!3m2!1sen!2sus!4v1549933654254" width="360" height="400"></object>
@@ -25,15 +21,12 @@ class HomeController < ApplicationController
   end
 
   def calendar
-    @page_title = "Calendar"
   end
 
   def resources
-    @page_title = "Resources"
   end
 
   def contact
-    @page_title = "Contact"
   end
 
   def addresses

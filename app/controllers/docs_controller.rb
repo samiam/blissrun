@@ -1,5 +1,4 @@
 class DocsController < ApplicationController
-  layout "home"
 
   DOCS = %w(five_mindfulness_trainings
             14_mindfulness_trainings
@@ -7,7 +6,7 @@ class DocsController < ApplicationController
             concepts)
 
   def show
-    @page_title = "Resources"
+    @page_title = 'Documentation'
 
     name = params[:id]
     if DOCS.include?(name)
