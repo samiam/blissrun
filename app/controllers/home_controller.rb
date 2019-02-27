@@ -63,7 +63,9 @@ class HomeController < ActionController::Base
 
   def redirect_to_www
     if request.host == "blissrun.org"
-      redirect_to url_for( :host => "www.blissrun.org" )
+      redirect_to url_for( :host => "www2.blissrun.org" )
+    elsif request.host == "www.blissrun.org"
+      redirect_to url_for( :host => "www2.blissrun.org" )
     end
   end
 
