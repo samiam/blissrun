@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   post '/addresses', to: 'home#addresses'   # on contact page
 
   get '/docs/:id', to: 'docs#show', as: 'doc'
+
+  get '/:str', to: proc { [404, {}, ['']] }, constraints: { str: /apple-touch-.*/}
 end
