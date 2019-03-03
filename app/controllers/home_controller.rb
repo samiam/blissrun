@@ -54,7 +54,7 @@ class HomeController < ActionController::Base
     reset_session
     redirect_to root_url
   end
-  
+
   private
 
   def user_logged_in?
@@ -62,10 +62,15 @@ class HomeController < ActionController::Base
   end
 
   def redirect_to_www
+    blissrun = "http://www.blissrun.org"
     if request.host == "blissrun.org"
-      redirect_to url_for( :host => "www2.blissrun.org" )
+      redirect_to url_for( :host => blissrun )
     elsif request.host == "www.blissrun.org"
-      redirect_to url_for( :host => "www2.blissrun.org" )
+      redirect_to url_for( :host => blissrun )
+    elsif request.host == "blissrun-org.successfulrelationships.com"
+      redirect_to url_for( :host => blissrun )
+    elsif request.host == "www.blissrun-org.successfulrelationships.com"
+      redirect_to url_for( :host => blissrun )
     end
   end
 
