@@ -62,15 +62,15 @@ class HomeController < ActionController::Base
   end
 
   def redirect_to_www
-    blissrun = "http://www.blissrun.org"
+    blissrun = "www.blissrun.org"
     if request.host == "blissrun.org"
-      redirect_to url_for( :host => blissrun )
+      redirect_to url_for( :host => blissrun, :protocol => "http" )
     elsif request.host == "www.blissrun.org"
-      redirect_to url_for( :host => blissrun )
+      redirect_to url_for( :host => blissrun, :protocol => "http" )
     elsif request.host == "blissrun-org.successfulrelationships.com"
-      redirect_to url_for( :host => blissrun )
+      redirect_to url_for( :host => blissrun, :protocol => "http" )
     elsif request.host == "www.blissrun-org.successfulrelationships.com"
-      redirect_to url_for( :host => blissrun )
+      redirect_to url_for( :host => blissrun, :protocol => "http" )
     end
   end
 
