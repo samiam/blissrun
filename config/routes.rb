@@ -10,5 +10,6 @@ Rails.application.routes.draw do
 
   get '/docs/:id', to: 'docs#show', as: 'doc'
 
-  get '/:str', to: proc { [404, {}, ['']] }, constraints: { str: /apple-touch-.*/}
+  # everything else gets 404
+  get '/:str', to: proc { [404, {}, ['']] }
 end
